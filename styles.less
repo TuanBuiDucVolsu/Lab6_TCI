@@ -1,0 +1,266 @@
+/
+@color-background-menu: #ffffff;
+@color-background-ul: #008B8B; 
+@color-menu-a: #008B8B;  
+@color-bookmark: #00AC6B; 
+@color-added: #FF4F00;
+ 
+* {
+ margin: 0;
+ padding: 0;
+}
+article, figure, footer, header, nav, section {display: block;} /*Компонент отображается как блок, 
+                                                                 при использовании значения блока компонента будет 
+                                                                стоять независимая строка по сравнению с компонентом до и после него*/
+ul {
+ list-style: none;
+}
+a {
+ text-decoration: none;/*Текстовое оформление*/
+}
+/* Шапка */
+header {
+ width: 100%;
+ margin-bottom: 30px;
+ position: relative;   /*относительное положение*/
+ height: 70px;
+}
+/* Меню*/
+ }
+ nav.menu1{
+   width: 100%;
+   background: @color-background-menu;
+}
+nav.menu1 ul{
+   width: 1350px;
+   margin: auto;
+   display: flex;
+   justify-content: space-around;
+   background-color : @color-background-ul;
+}
+nav.menu1 ul li {
+   padding: 10px 12px;
+   font-size: 20px;
+   list-style: none;
+   margin: 0px 20px;
+   cursor: pointer;
+}
+.co-dinh-menu{
+   position: fixed;
+   top: 0px;
+   left: 0px;
+   z-index: 1000;
+   box-shadow: 2px 5px 5px rgb(0,0,0,0.35);
+}
+.back-to-top {
+   width: 50px;
+   height: 50px;
+   background: rgb(0,0,0,0.7);
+   font-size: 35px;
+   color: whitesmoke;
+   text-align: center;
+   vertical-align: center;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   position: fixed;
+   left: 50%;
+   bottom: 20px;
+   margin-left: -25px;
+   cursor: pointer;
+   visibility: hidden;
+   opacity: 0;
+}
+.back-to-top.hien-ra{
+   visibility: visible;
+   opacity: 1;
+}
+
+.menu {
+ float: right;
+}
+.menu li {
+ display: inline-block;   /*Компонент будет отображаться как блок, но как встроенный блок*/
+}
+.menu a {
+ text-transform: uppercase;  /*заглавные буквы*/
+ display: block;
+ color: darkcyan;
+ padding: 10px;
+}
+.menu a:hover {                        /*Селектор: hover используется для выбора элемента, 
+                                       который в данный момент находится над пользователем */
+ color: #fff;
+ background-color: darkcyan;
+}
+/* Основное содержимое */
+
+.mag(@value @value){           /* примеси без с параметрами */
+ margin : @value @value;
+}
+.big1(@value){
+ width : @value;
+ }
+.big2(@value){
+ max-width : @value;
+ }
+.container {    /*контейнер,Молекулы содержатся в нем*/
+ .mag(0 auto);
+ .big1(100%);
+ .big2(960px);
+}
+html {
+  font: 1.1em/1.4 Helvetica, sans-serif;
+}
+img {
+  max-width: 100%;
+  display: block;
+  margin-left: auto; 
+  margin-right: auto;
+}
+
+p {
+  margin: 0 0 1em 0;
+}
+
+* { box-sizing: border-box; } 
+.media {
+  display: flex;              /*Помогает гибкости компонентов в виде inline.*/
+  flex-wrap: wrap;           /*Элементы Flex можно разбить на две строки, если общая ширина элементов превышает ширину контейнера.*/
+  border: 2px solid rgb(86,98,110);
+  border-radius: 10px;
+  margin-bottom: 2em;
+  margin-top: 3em
+}
+
+.media > * {
+  flex: 1 1 550px;
+  margin: 10px;
+} 
+.big(){              /* примеси без параметров*/
+ width: 960px;
+ max-width:100%;
+}
+.bod(){
+ border: 5px ;
+}
+.wrapper {           /*Раздел, который окружает теги div в нем*/
+  .big();
+  .bod() ;
+}
+
+#xyz {
+             
+			margin-top: 3em;
+			margin-bottom: 1em;
+			
+}
+#xyz1 {
+	       
+			margin-top: 2em;
+			margin-bottom: 1em;
+}
+.bookmark {
+ color: @color-bookmark;
+}
+.added {
+ color: @color-added;
+}
+.bookmark-list a {
+ margin-right: 5px;
+}
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.6);
+    z-index: 1000;
+}
+.modal .modal_content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    z-index: 99999;
+}
+.modal .modal_content .close_modal_window {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+/* Футер */
+footer {
+ margin-top: 30px;
+ height: 70px;
+ line-height: 100px;
+}
+.col-three {
+ width: 33.3333333333%;
+ float: left;
+ text-align: center;
+}
+@media (min-width:768) (max-width: 1024px) {
+/* Ширину класса container делаем резиновой */
+ .container {
+ max-width: 70%;
+ }
+ .wrapper{
+	 max-width:100%;
+ }
+ .img{
+	 max-width:100%;
+ }
+/* Расположение блоков в footer делаем в одну колонку */
+ .col-three {
+ float: none;
+ width: 100%;
+ text-align: center;
+ }
+}
+@media (min-width :480px) (max-width:767px) {
+/* Ширину класса container делаем резиновой */
+ .container {
+ max-width: 80%;
+ }
+ .wrapper{
+	 max-width:100%;
+ }
+ .img{
+	 max-width:100%;
+ }
+ 
+/* Расположение блоков в footer делаем в одну колонку */
+ .col-three {
+ float: none;
+ width: 100%;
+ text-align: center;
+ }
+}
+@media (max-width: 479) {
+/* Ширину класса container делаем резиновой */
+ .container {
+ max-width: 90%;
+ }
+
+ .wrapper{
+	 max-width:100%;
+ }
+ .img{
+	 max-width:100%;
+ }
+/* Расположение блоков в footer делаем в одну колонку */
+ .col-three {
+ float: none;
+ width: 100%;
+ text-align: center;
+ }
+
+}
